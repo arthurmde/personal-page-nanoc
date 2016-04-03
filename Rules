@@ -26,3 +26,19 @@ compile '/**/*' do
 end
 
 layout '/**/*', :erb
+
+#othing special to do with images / javascript / asset
+# Just copy it to public directory
+compile '/images/*/' do
+end
+
+# CoffeeScript file are convert to JS file by my Guardfile
+
+compile '/javascripts/*/' do
+end
+
+compile '/assets/*/' do
+end
+
+compile '/css/*/' do
+end

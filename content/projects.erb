@@ -2,25 +2,33 @@
 title: "My Projects"
 projects:
   -
-    name: "Meu Projeto 1"
+    name: "Projeto Completo"
     image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/The_Project_logo.svg/1000px-The_Project_logo.svg.png"
-    description: "<p>Descrição resumida sobre o que é o projeto para que serve
-    através de um resumo que interesse aos leitores. Observe que tanto
+    description: "<p>Descrição resumida sobre o que é o projeto e para que serve
+    através de um resumo que interesse aos <b>leitores</b>. Observe que tanto
     o título do projeto quanto a imagem/logo do projeto podem ser links
     para a página principal do projeto.</p>"
     link: "#"
+    period: "2015 - *"
   -
-    name: "Meu Projeto 2"
+    name: "Projeto Sem Logo"
     image: ""
     description: "<p>Note que esse projeto não tem imagem associada. Portanto, o seu
     resumo deve ocupar todo o espaço que deveria estar associada à imagem.</p>"
     link: "#"
+    period: "2013 - 2015"
   -
     name: "Meu Projeto 3"
     image: "https://upload.wikimedia.org/wikipedia/commons/c/cf/Work_life_balance_rat_race.png"
-    description: "<p>Note que esse projeto não tem imagem associada. Portanto, o seu
-    resumo deve ocupar todo o espaço que deveria estar associada à imagem.</p>"
+    description: "<p>A descrição do projeto pode utilizar qualquer elemento do HTML.</p>
+    <p>Esse exemplo utiliza mais de um parágrafo. Da mesma forma, podem ser utilizados
+    elementos com classes ou id, <a href='#'>links</a>, <b>negrito</b>, dentre outras
+    opções de formatação.</p>
+    <p>É importante tomar cuidado com a utilização de aspas duplas ou aspas simples,
+    pois há atributos de tags HTML, como a tag <b>a</b>, que podem necessitar utilizar
+    uma das duas construções</p>"
     link: "#"
+    period: "2010 - 2013"
 ---
 
 <h1>Projects</h1>
@@ -40,6 +48,7 @@ projects:
           <h4><%= project[:name] %></h4>
         </a>
         <%= project[:description] %>
+        <small>Atuação: <%= project[:period] %></small>
       </div>
     <% else %>
       <div class="col-xs-12 col-md-12">
@@ -47,6 +56,7 @@ projects:
           <h4><%= project[:name] %></h4>
         </a>
         <%= project[:description] %>
+        <small>Atuação: <%= project[:period] %></small>
       </div>
     <% end %>
   </div>

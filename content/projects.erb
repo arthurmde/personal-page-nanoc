@@ -1,50 +1,55 @@
 ---
 title: "My Projects"
+projects:
+  -
+    name: "Meu Projeto 1"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/The_Project_logo.svg/1000px-The_Project_logo.svg.png"
+    description: "<p>Descrição resumida sobre o que é o projeto para que serve
+    através de um resumo que interesse aos leitores. Observe que tanto
+    o título do projeto quanto a imagem/logo do projeto podem ser links
+    para a página principal do projeto.</p>"
+    link: "#"
+  -
+    name: "Meu Projeto 2"
+    image: ""
+    description: "<p>Note que esse projeto não tem imagem associada. Portanto, o seu
+    resumo deve ocupar todo o espaço que deveria estar associada à imagem.</p>"
+    link: "#"
+  -
+    name: "Meu Projeto 3"
+    image: "https://upload.wikimedia.org/wikipedia/commons/c/cf/Work_life_balance_rat_race.png"
+    description: "<p>Note que esse projeto não tem imagem associada. Portanto, o seu
+    resumo deve ocupar todo o espaço que deveria estar associada à imagem.</p>"
+    link: "#"
 ---
 
 <h1>Projects</h1>
 
-<hr>
-
-<div class="row">
-  <div class="col-xs-12 col-md-3">
-    <a href="#" class="thumbnail">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/The_Project_logo.svg/1000px-The_Project_logo.svg.png">
-    </a>
+<% projects.each do |project| %>
+  <% project_with_image = !project[:image].nil? && !project[:image].empty? %>
+  <hr>
+  <div class="row">
+    <% if project_with_image %>
+      <div class="col-xs-12 col-md-3">
+        <a href="<%= project[:link] %>" class="thumbnail">
+          <img src="<%= project[:image] %>">
+        </a>
+      </div>
+      <div class="col-xs-12 col-md-9">
+        <a href="<%= project[:link] %>">
+          <h4><%= project[:name] %></h4>
+        </a>
+        <%= project[:description] %>
+      </div>
+    <% else %>
+      <div class="col-xs-12 col-md-12">
+        <a href="<%= project[:link] %>">
+          <h4><%= project[:name] %></h4>
+        </a>
+        <%= project[:description] %>
+      </div>
+    <% end %>
   </div>
-  <div class="col-xs-12 col-md-9">
-    <a href="#"><h4>Meu Projeto 1</h4></a>
-    <p>Descrição resumida sobre o que é o projeto para que serve
-    através de um resumo que interesse aos leitores. Observe que tanto
-    o título do projeto quanto a imagem/logo do projeto podem ser links
-    para a página principal do projeto.</p>
-  </div>
-</div>
-
-<hr>
-
-<div class="row">
-  <div class="col-xs-12 col-md-12">
-    <a href="#"><h4>Meu Projeto 2</h4></a>
-    <p>Note que esse projeto não tem imagem associada. Portanto, o seu
-    resumo deve ocupar todo o espaço que deveria estar associada à imagem.</p>
-  </div>
-</div>
+<% end %>
 
 
-<hr>
-
-<div class="row">
-  <div class="col-xs-12 col-md-3">
-    <a href="#" class="thumbnail">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/Work_life_balance_rat_race.png">
-    </a>
-  </div>
-  <div class="col-xs-12 col-md-9">
-    <a href="#"><h4>Meu Projeto 3</h4></a>
-    <p>Descrição resumida sobre o que é o projeto para que serve
-    através de um resumo que interesse aos leitores. Observe que tanto
-    o título do projeto quanto a imagem/logo do projeto podem ser links
-    para a página principal do projeto.</p>
-  </div>
-</div>

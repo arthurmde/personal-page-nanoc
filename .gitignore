@@ -1,4 +1,6 @@
+## Nanoc 
 output/
+crash.log
 
 *.gem
 *.rbc

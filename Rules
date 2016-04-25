@@ -4,6 +4,11 @@ compile '/**/*.html' do
   layout '/default.*'
 end
 
+route '/posts/*' do
+  y,m,d,slug = /([0-9]+)\-([0-9]+)\-([0-9]+)\-([^\/]+)/.match(item.identifier.without_ext).captures
+
+  "/#{y}/#{m}/#{slug}/index.html"
+end
 
 route '/**/*.{html,md,erb}' do
   if item.identifier =~ '/index.*'
@@ -16,6 +21,11 @@ end
 compile "/*.erb" do
   filter :erb
   layout '/default.*'
+end
+
+compile "/posts/*.erb" do
+  filter :erb
+  layout '/post.html'
 end
 
 compile '/*.md' do

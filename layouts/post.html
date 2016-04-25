@@ -1,0 +1,19 @@
+<% render '/default.html' do %>
+  <div class='post row'>
+    <h1><%= item[:title] %></h1>
+    <aside>
+      <span class="glyphicon glyphicon-time"></span>
+      Postado em <b><%= item[:created_at_verbose] %></b> por <b><%= item[:author] %></b>
+    </aside>
+    <hr>
+    <article>
+      <%= yield %>
+    </article>
+  </div>
+
+  <hr>
+  <a class="btn btn-primary" href="/blog">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+    Voltar ao Blog
+  </a>
+<% end %>

@@ -15,7 +15,7 @@ title: "My Blog"
         <span class="glyphicon glyphicon-time"></span>
         Postado em <b><%= post[:created_at_verbose] %></b> por <b><%= post[:author] %></b>
       </p>
-      <%= post.compiled_content %>
+      <%= get_post_start(post) %>
       <a class="btn btn-primary" href="<%= post.path %>">Leia Mais <span class="glyphicon glyphicon-chevron-right"></span></a>
     </div>
   <% end %>
